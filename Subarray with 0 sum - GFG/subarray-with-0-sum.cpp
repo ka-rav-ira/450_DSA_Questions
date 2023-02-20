@@ -12,20 +12,20 @@ class Solution{
     //Complete this function
     //Function to check whether there is a subarray present with 0-sum or not.
     bool subArrayExists(int arr[], int n)
-{
+    {
         unordered_set<int>pre;
-        int pre_sum=0;
-        for(int i = 0 ; i<n ;i++){
-            pre_sum = pre_sum + arr[i];
-         
-         if(pre_sum==0)
+        int pre_sum = 0 ;
+        for(int i = 0 ; i < n ; i++){
+            pre_sum=pre_sum + arr[i] ;
+            
+            if(pre_sum==0)
              return 1;
-         
-         if(pre.find(pre_sum)!=pre.end())
-             return 1;
-         
-         
-         pre.insert(pre_sum);
+             
+             if(pre.find(pre_sum)!=pre.end())
+                 return 1;
+                 
+                 pre.insert(pre_sum);
+             
         }
         return 0;
     }
