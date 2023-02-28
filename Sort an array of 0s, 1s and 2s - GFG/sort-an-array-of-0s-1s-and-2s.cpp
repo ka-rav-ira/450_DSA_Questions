@@ -8,33 +8,25 @@ using namespace std;
 class Solution
 {
     public:
-    
-        void swap(int &x , int&y){
-            int temp = x ;
-            x = y ;
-            y = temp;
-        }
-    
-    void sort012(int a[], int n)
+    void sort012(int arr[], int n)
     {
-        int l = 0 , h = n-1 , m=0;
-        while(m<=h){
-        if(a[m]==0){
-            swap(a[m],a[l]);
-            l++;
-            m++;
-        }
-        
-        else if(a[m]==2){
-            swap(a[m],a[h]);
-            h--;
-        }
-        
-        else{
-            m++;
+        int low = 0 ; 
+        int mid = 0 ; 
+        int high = n - 1 ;
+        while(mid<=high){
+            if(arr[mid]<1){
+                swap(arr[mid],arr[low]);
+                mid++;
+                low++;
+            }
+            else if(arr[mid]>1){
+                swap(arr[mid],arr[high]);
+                high--;
+            }
+            else mid++;
         }
     }
-    } 
+    
 };
 
 //{ Driver Code Starts.
